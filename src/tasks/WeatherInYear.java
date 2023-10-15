@@ -74,7 +74,7 @@ public class WeatherInYear {
         int[] minT = {-10, -8, -5, 0, 10, 15, 15, 12, 8, 3, 0, -5};
         int[] maxT = {-2, 0, 5, 12, 17, 23, 25, 23, 20, 15, 7, 1};
 
-        //filling array
+        //заполнение массива
         for (int i =0; i<weatherInYear.length;i++){
             for(int j =0; j<weatherInYear[i].length;j++){
                 int minTemp = minT[i];
@@ -128,7 +128,7 @@ public class WeatherInYear {
         System.out.println("Самый тёплый день: "+MONTH.values()[warmestmonth]+" - "+ warmestday + "°C");
         System.out.println("Самый холодный день: "+MONTH.values()[coldestmonth]+" - "+ coldestday + "°C");
     }
-    // Отображение погоды на указанную дату, введенную пользователем.
+    // Отображение погоды на указанную дату, введенную пользователем
     public void Tdate(){
         System.out.print("Введите месяц (1-12): ");
         int month = scanner.nextInt();scanner.nextLine();
@@ -136,7 +136,7 @@ public class WeatherInYear {
         int day = scanner.nextInt();scanner.nextLine();
         
 
-
+        
         if (isvaliddate(month, day)){
             int temperature = weatherInYear[month-1][day -1];
             System.out.println("Погода на "+MONTH.values()[month-1]+ " "+ day+" - "+ temperature+"°C");
@@ -144,6 +144,7 @@ public class WeatherInYear {
             System.out.println("Неверная дата!!!");
         }
     }
+    //для проверки даты
     public boolean isvaliddate(int month, int day) {
         return month >= 1 && month <= 12 && day >= 1 && day <= weatherInYear[month - 1].length;
     }
