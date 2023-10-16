@@ -8,13 +8,16 @@ package jptv22hometasks;
 import java.util.Scanner;
 
 import tasks.EasternCalendar;
-import tasks.GuessGame;
 import tasks.Massive20;
 import tasks.MultiplicationTest;
 import tasks.NumberParser;
 import tasks.TemperatureConventer;
 import tasks.WeatherInYear;
 import tasks.LetterChecking;
+import tasks.Perevyortish;
+
+import Bookslib.BooksArray;
+
 
 
 /**
@@ -36,11 +39,12 @@ public class App {
             System.out.println("1. Конвертер температуры");
             System.out.println("2. Парсер чисел");
             System.out.println("3. Массив20");
-            System.out.println("4. Угадайка");
-            System.out.println("5. Восточный календарь");
-            System.out.println("6. Тест таблицы умножения");
-            System.out.println("7. Проверка букв");
-            System.out.println("8. Погода в году");
+            System.out.println("4. Восточный календарь");
+            System.out.println("5. Тест таблицы умножения");
+            System.out.println("6. Проверка букв");
+            System.out.println("7. Погода в году");
+            System.out.println("8. Перевернуть слово");
+            System.out.println("9. Книги");
             System.out.print("Номер задачи: ");
             int task = scanner.nextInt(); scanner.nextLine();
             switch (task) {
@@ -67,29 +71,34 @@ public class App {
                     massive20.doMassive20();
                     break;
                 case 4:
-                    System.out.println("Выбрана угадайка");
-                    GuessGame guessgame = new GuessGame (scanner);
-                    guessgame.doGuessGame();
-                    break;
-                case 5:
                     System.out.println("Выбран восточный календарь");
                     EasternCalendar easterncalendar = new EasternCalendar (scanner);
                     easterncalendar.doEasternCalendar();
                     break;
-                case 6:
+                case 5:
                     System.out.println("Выбран тест таблицы умножения");
                     MultiplicationTest multiplicationtest = new MultiplicationTest (scanner);
                     multiplicationtest.doMultiplicationTest();
                     break;
-                case 7:
+                case 6:
                     System.out.println("Выбрана проверка букв");
                     LetterChecking letterchecking = new LetterChecking(scanner);
                     letterchecking.doLetterCheking();
                     break;
-                case 8:
+                case 7:
                     System.out.println("Выбрана погода в году");
                     WeatherInYear weatherinyear = new WeatherInYear();
                     weatherinyear.play();
+                    break;
+                case 8:
+                    System.out.println("Выбрано перевернуть слово");
+                    Perevyortish perevyortish = new Perevyortish();
+                    perevyortish.run();
+                    break;
+                case 9:
+                    System.out.println("Выбраны книги");
+                    BooksArray booksArray = new BooksArray();
+                    booksArray.runbooks();
                     break;
                 default:
                     System.out.println("ERROR");
